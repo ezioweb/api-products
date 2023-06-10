@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors")
 const app = express();
 const ProductSchema = require("./schemas/ProductShema")
 const PORT = process.env.PORT || 3333;
 
+app.use(cors());
 app.use(express.json());
 mongoose.connect("mongodb+srv://admin:admin@cluster0.7cz8got.mongodb.net/db_products?retryWrites=true&w=majority");
 
